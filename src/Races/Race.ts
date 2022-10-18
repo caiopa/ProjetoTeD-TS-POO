@@ -1,26 +1,23 @@
 export default abstract class Race {
-  protected _name: string;
-  protected _dexterity: number;
-
-  // protected static _racesCounter = 0
+  private _name: string;
+  private _dexterity: number;
 
   constructor(name: string, dexterity: number) {
     this._name = name;
     this._dexterity = dexterity;
-    // Race._racesCounter += 1;
   }
 
-  get name(): string {
+  public get name(): string {
     return this._name;
   }
 
-  get dexterity(): number {
+  public get dexterity(): number {
     return this._dexterity;
   }
 
-  public static createdRacesInstances(): number | string {
+  public static createdRacesInstances(): number {
     throw new Error('Not implemented');
   }
 
-  public abstract get maxLifePoints(): number;
+  abstract get maxLifePoints(): number;
 }
